@@ -6,6 +6,8 @@
 
 [Absinthe official website](https://absinthe-graphql.org/)
 
+[Tutorial repo](https://github.com/tensor-programming/phoenix_1.3_graphql_part_2)
+
 1. Create project(API only):
 ```bash
 mix phx.new elixir_graphql_todoapi --database sqlite3 --no-html --no-assets
