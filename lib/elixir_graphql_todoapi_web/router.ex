@@ -7,7 +7,14 @@ defmodule ElixirGraphqlTodoapiWeb.Router do
 
   scope "/api", ElixirGraphqlTodoapiWeb do
     pipe_through :api
+    resources "/todos", TodoController, except: [:new, :edit]
   end
+
+  forward "/api", Absinthe.Plug,
+    schema: ElixirGraphqlTodoapiWeb.Schema
+
+  forward "/graphiql", Absinthe.Plug.GraphiQL,
+    schema: ElixirGraphqlTodoapiWeb.Schema
 
   # Enable LiveDashboard and Swoosh mailbox preview in development
   if Application.compile_env(:elixir_graphql_todoapi, :dev_routes) do

@@ -1,18 +1,28 @@
-# ElixirGraphqlTodoapi
+# Graphql in elixir
 
-To start your Phoenix server:
+[**Hex** - Elixir/Erlang package manager](https://hex.pm/)
 
-  * Run `mix setup` to install and setup dependencies
-  * Start Phoenix endpoint with `mix phx.server` or inside IEx with `iex -S mix phx.server`
+[**HexDocs** - Packages documentation](https://hexdocs.pm/)
 
-Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
+[Absinthe official website](https://absinthe-graphql.org/)
 
-Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
+1. Create project(API only):
+```bash
+mix phx.new elixir_graphql_todoapi --database sqlite3 --no-html --no-assets
+```
 
-## Learn more
+2. Dependencies:
+- [Absinthe](https://hexdocs.pm/absinthe/overview.html)
+- [Absinthe plug](https://hexdocs.pm/absinthe/plug-phoenix.html)
+- [Faker](https://hex.pm/packages/faker)
+- Install deps: ```mix do deps.get, compile```
+  
+1. Resources:
+```bash
+mix phx.gen.json Todos Todo todos title:string completed:boolean
+```
 
-  * Official website: https://www.phoenixframework.org/
-  * Guides: https://hexdocs.pm/phoenix/overview.html
-  * Docs: https://hexdocs.pm/phoenix
-  * Forum: https://elixirforum.com/c/phoenix-forum
-  * Source: https://github.com/phoenixframework/phoenix
+1. Run seed:
+```bash
+mix run priv/repo/seeds.exs
+```
